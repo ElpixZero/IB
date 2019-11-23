@@ -1,14 +1,23 @@
 import React from 'react';
+import "../style.css";
+import Logo from '../img/logo.png';
 
-const styles = {
-    'height': '200px',
-    "backgroundColor": "red"
-}
 
 function Header (props) {
     return (
-        <header style={styles}>
-            <h1>Some header</h1>
+        <header>
+            <div className="leftHeader">
+                  <img src={Logo} className="logo" alt="Logo"/>
+                <div>Название компании</div>
+            </div>
+            <div className="centerHeader">
+                <div>Решения</div>
+                <div>Поддержка</div>
+                <div>Партнеры</div>
+            </div>
+            <div className="rightHeader">
+                <div>Личный кабинет</div>
+            </div>
         </header>
     )
 }
