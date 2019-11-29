@@ -6,14 +6,13 @@ import serv from '../../img/about_serv.png';
 
 function About () {
   return (
-    <div className="about_main">
-      <div className="about_header_all">
-        <img  className="about_img" src={icon}></img>
-        <h3 className="about_header">О компании</h3>
+    <div className="main">
+      <div className="about_1st">
+        <img src={icon} />
       </div>
-      <div className="about_content_all">
-        <div className="about_content_protect">
-          <p className="about_content">
+      <div className="about_2nd">
+        <h3 className="about_header">О компании</h3>  
+        <p className="about_content">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sodales
             facilisis ante, et malesuada ante faucibus et. Pellentesque habitant
             morbi tristique senectus et netus et malesuada fames ac turpis egestas.
@@ -32,13 +31,14 @@ function About () {
             Nullam tempus, ligula eu aliquam maximus, justo est ultrices quam,
             molestie dictum odio nunc sed ligula. Sed id dolor volutpat, malesuada
             urna id, condimentum neque. 
-          </p>        
+          </p>
           <button className="about_button">Стать клиентом</button>
-        </div>  
-        <img className="about_pic" src={serv}></img>
       </div>
-    </div>
-  )
+      <div className="about_3rd">
+        <img className="about_pic" src={serv} />
+      </div>
+      </div>
+  );
 }
 
 export default About;
