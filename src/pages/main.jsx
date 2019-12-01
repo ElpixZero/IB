@@ -7,7 +7,7 @@ function Main() {
   return (
     <div>
       <Header main={true} />
-      <About/>
+      
 
       <Footer main={true} />
     </div>
