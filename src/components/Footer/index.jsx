@@ -1,71 +1,41 @@
 import React from 'react';
-import './index.css';
+import "./index.css";
 import LineF from '../../img/lineFooter.png';
 import EllipseFooter from '../../img/ellipseFooter.png';
 
-function Footer(props) {
-  return (
-    <footer>
-      <div className="topFooter">
-        <div className="firstFooter">
-          <div className="textFooter headFooter">Для дома</div>
-          <br />
-          <div className="textFooter">Напиши блин</div>
-          <div className="textFooter">Любой текст</div>
-          <div className="textFooter">Че ты этот копируешь</div>
-          <div className="textFooter">Миша превет</div>
-        </div>
-        <div className="secondFooter">
-          <div className="textFooter headFooter">Для малого бизнеса</div>
-          <br />
-          <div className="textFooter">Good day</div>
-          <div className="textFooter">To everybody</div>
-          <div className="textFooter">You're wonderful</div>
-        </div>
-        <div className="thirdFooter">
-          <div className="textFooter headFooter">Для среднего бизнеса</div>
-          <br />
-          <div className="textFooter">Как же</div>
-          <div className="textFooter">Интересно</div>
-          <div className="textFooter">Верстать</div>
-        </div>
-        <div className="fourthFooter">
-          <div className="textFooter headFooter">Для крупного бизнеса</div>
-          <br />
-          <div className="textFooter">So incredible</div>
-          <div className="textFooter">Activity</div>
-        </div>
-      </div>
-      <img src={LineF} className="lineFooter" alt="LineF" />
-      <div className="bottomFooter">
-        <div>Контакты</div>
-        <img
-          src={EllipseFooter}
-          className="ellipseFooter"
-          alt="ellipseFooter"
-        />
-        <div>Партнеры</div>
-        <img
-          src={EllipseFooter}
-          className="ellipseFooter"
-          alt="ellipseFooter"
-        />
-        <div>Об угрозах</div>
-        <img
-          src={EllipseFooter}
-          className="ellipseFooter"
-          alt="ellipseFooter"
-        />
-        <div>Новости</div>
-        <img
-          src={EllipseFooter}
-          className="ellipseFooter"
-          alt="ellipseFooter"
-        />
-        <div>Блог</div>
-      </div>
-    </footer>
-  );
+function Footer (props) {
+    return (
+        <footer>
+            <div className="topFooter">
+                <ul>
+                    <li className="textFooter headFooter"><a>Для малого бизнеса</a></li>
+                    <br />
+                    <li className="textFooter"><a>Good day</a></li>
+                    <li className="textFooter"><a>To everybody</a></li>
+                    <li className="textFooter"><a>Eldar besish</a></li>
+                </ul>
+                <ul>
+                    <li className="textFooter headFooter"><a>Для среднего бизнеса</a></li>
+                    <br />
+                    <li className="textFooter"><a>Как же</a></li>
+                    <li className="textFooter"><a>Интересно</a></li>
+                    <li className="textFooter"><a>Верстать</a></li>
+                </ul>
+            </div>
+            <img src={LineF} className="lineFooter" alt="LineF"/>
+            <div className="bottomFooter">
+            <a>Контакты</a>
+            <img src={EllipseFooter} className="ellipseFooter" alt="ellipseFooter"/>
+            <a>Партнеры</a>
+            <img src={EllipseFooter} className="ellipseFooter" alt="ellipseFooter"/>
+            <a>Об угрозах</a>
+            <img src={EllipseFooter} className="ellipseFooter" alt="ellipseFooter"/>
+            <a>Новости</a>
+            <img src={EllipseFooter} className="ellipseFooter" alt="ellipseFooter"/>
+            <a>Блог</a>
+            </div>
+        </footer>
+    )
 }
 
 export default Footer;
