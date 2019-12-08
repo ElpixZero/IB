@@ -1,21 +1,25 @@
 import React from 'react';
+import HamburgerMenu from '../HamburgerMenu';
 import Logo from '../../img/logo.png';
 import './index.css';
 
 function Header() {
   return (
-      <header>
+      <header className="header"> 
         <div className="leftHeader">
           <img src={Logo} className="logo" alt="Logo" />
-          <div>Название компании</div>
+          <a>IB</a>
         </div>
         <div className="centerHeader">
-          <div>Решения</div>
-          <div>Поддержка</div>
-          <div>Партнеры</div>
+          <a>Решения</a>
+          <a>Поддержка</a>
+          <a>Партнеры</a>
         </div>
         <div className="rightHeader">
-          <div>Личный кабинет</div>
+          <a>Личный кабинет</a>
+          <div className="hamburgerMenu">
+          <HamburgerMenu />
+          </div>
         </div>
       </header>
   );

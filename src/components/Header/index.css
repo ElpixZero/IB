@@ -1,4 +1,4 @@
-header {
+.header {
     background-image: url(../../img/header.png);
     width: 100%;
     left: 0;
@@ -7,30 +7,71 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 20px 0;
+    font-size: 20px;
 }
 
-.logo {
-    height: 25%;
-    padding-top: 4%;
-    padding-bottom: 4%;
-    padding-right: 4%;
+.hamburgerMenu {
+    display: none;
 }
 
 .leftHeader {
-    width: 40%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    min-width: 150px;
+    margin-left: 30px;
+}
+
+.logo {
+    margin-right: 30px;
+    height: 70px;
 }
 
 .centerHeader {
-    width: 20%;
+    flex-grow: 1;
     display: flex;
-    justify-content: space-between;
+    padding: 0;
+    justify-content: space-evenly;
 }
 
 .rightHeader {
-    width: 20%;
-    display: flex;
-    justify-content: space-between;
+    margin-right: 30px;
 }
+
+@media (max-width: 1023px) {
+    .header {
+        font-size: 16px;
+    }    
+}
+
+@media (max-width: 767px) {
+    .header {
+        padding: 15px 0;
+        font-size: 14px;
+    }
+    .centerHeader {
+       display: none;
+    }    
+
+    .logo {
+        height: 50px;
+        margin-right: 15px;
+    }
+
+    .leftHeader {
+        margin-left: 20px;
+    }
+
+    .rightHeader {
+        margin-right: 20px;
+    }
+
+    .rightHeader a {
+        display: none;
+    }
+
+    .hamburgerMenu {
+        display: block;
+    }
+}
+
