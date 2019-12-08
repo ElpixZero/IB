@@ -16,7 +16,7 @@ function Header() {
           <a>Партнеры</a>
         </div>
         <div className="rightHeader">
-          <a>Личный кабинет</a>
+          <a href="/auth">Личный кабинет</a>
           <div className="hamburgerMenu">
           <HamburgerMenu />
           </div>

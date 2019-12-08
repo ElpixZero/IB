@@ -13,6 +13,9 @@ function Main() {
   return (
     <div style={styles}>
       <Header />
+      <About />
+      <Advantages />
+      <Footer />
     </div>
   );
 }
