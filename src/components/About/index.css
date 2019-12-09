@@ -27,7 +27,7 @@
     font-size: 15px;
     line-height: 20px;
     text-align: justify;
-    padding: 0px 10px 0px 0px;
+    padding: 0px 25px 0px 0px;
 }
 
 .about_button {
@@ -44,10 +44,17 @@
 }
 
 .about_pic {
-    padding: 0px 0px 0px 150px;
+    padding: 0px 0px 0px 100px;
 }
 
 @media screen and (max-width: 1023px) {
+    .about_1st {
+        padding-bottom: 120px;
+    }
+    .about_2nd {
+        padding-bottom: 120px;
+        font-size: 35px;
+    }
     .about_3rd {
         display: none;
     }
@@ -57,11 +64,29 @@
     .about_button {
         margin: 50px 0px 0px 0px;
     }
+
+    .about_button {
+        width: 235px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .about_header {
+        font-size: 30px;
+    }
+    .about_1st img {
+        width: 40px;
+    }
+    .about_button {
+        font-size: 16px;
+        width: 190px;
+        height: 55px;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .about_1st {
         display: none;
     }
-
 }
