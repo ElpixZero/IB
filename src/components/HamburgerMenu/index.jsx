@@ -24,7 +24,9 @@ class Example extends React.Component {
         },
         bmCrossButton: {
           height: '30px',
-          width: '30px'
+          width: '30px',
+          right: '15px',
+          top: '12px',
         },
         bmCross: {
           background: '#fff',
