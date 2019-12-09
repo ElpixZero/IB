@@ -14,7 +14,7 @@ class Example extends React.Component {
           width: '25px',
           height: '25px',
           right: '30px',
-          top: '30px',
+          top: '27.5px',
         },
         bmBurgerBars: {
           background: 'white'
