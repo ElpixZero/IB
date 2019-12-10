@@ -19,6 +19,7 @@
   line-height: 20px;
   padding: 10px;
   color: #757575;
+  font-weight: 300;
 }
 
 .formTitle {
@@ -30,7 +31,7 @@
 .formButton {
   margin-top: 30px;
   margin-bottom: 140px;
-  background: linear-gradient(180deg, #DF24EF 0%, #E13386 100%);
+  background: linear-gradient(180deg, #df24ef 0%, #e13386 100%);
   max-width: 200px;
   height: 41px;
   width: 100%;

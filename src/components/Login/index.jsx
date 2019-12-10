@@ -1,9 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-import PasswordIcon from '../../img/passwordIcon.svg';
+import RegisterForm from '../Register';
 import './index.css';
 
-function RegisterPage() {
+function LoginPage() {
+  const [goToRegister, setGoToRegister] = React.useState(false);
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
 
@@ -20,16 +21,18 @@ function RegisterPage() {
       password,
     };
 
+    console.log(data);
+
     const ans = await axios({
       method: 'post',
-      url: 'https://hard-rock.site:1443/api/user/new',
+      url: 'https://hard-rock.site:1443/api/user/login',
       data: JSON.stringify(data),
     });
   };
 
-  return (
+  const loginComponent = (
     <form className="form" onSubmit={e => onRegister(e)}>
-      <h1 className="formTitle">Регистрация</h1>
+      <h1 className="formTitle">Вход</h1>
       <div className="formFields">
         <input
           id="email"
@@ -46,23 +49,25 @@ function RegisterPage() {
           type="password"
           placeholder="Пароль"
         />
-        <input
-          id="repeatPassword"
-          onChange={() => {}}
-          value={password}
-          className="formField formFieldPassword"
-          type="password"
-          placeholder="Повторите пароль"
-        />
-        <input type="checkbox" />
-        <input
-          type="submit"
-          className="formButton"
-          value="Создать учетную запись"
-        />
+        <p onClick={() => alert('OK')} className="formForgetPassword">
+          Забыли пароль?
+        </p>
+        <input type="submit" className="loginButton" value="Войти" />
+      </div>
+      <div className="goToRegister">
+        <p className="isRegisteredMessage">Не зарегестрированны?</p>
+        <button
+          onClick={() => setGoToRegister(true)}
+          className="goToRegisterButton"
+        >
+          Создать учетную запись
+        </button>
       </div>
     </form>
   );
+
+  const renderedComponent = goToRegister ? <RegisterForm /> : loginComponent;
+  return <>{renderedComponent}</>;
 }
 
-export default RegisterPage;
+export default LoginPage;
