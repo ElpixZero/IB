@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import PasswordIcon from '../../img/passwordIcon.svg';
 import './index.css';
 
@@ -54,7 +55,17 @@ function RegisterPage() {
           type="password"
           placeholder="Повторите пароль"
         />
-        <input type="checkbox" />
+        <div className="regFormCheckbox">
+          <div class="checkbox">
+            <input id="regCheck" name="regCheck" type="checkbox" />
+            <label className="ff"></label>
+        </div>
+        <div className="checkboxLabel">
+          <label for='regCheck' className="checkboxLabelText">Я подтверждаю, что полностью прочитал, понимаю и принимаю все условия <Link to="/pc" className="checkboxLabelSpecial">Политики конфиденциальности</Link>, описывающей обработку данных</label>
+        </div>
+       </div>
+       
+        
         <input
           type="submit"
           className="formButton"
