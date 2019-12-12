@@ -8,7 +8,7 @@
 }
 
 .about_1st {
-    padding: 153px 0px 0px 25px;
+    padding: 150px 0px 0px 25px;
 }
 
 .about_3rd {
@@ -83,10 +83,23 @@
         width: 190px;
         height: 55px;
     }
+    .about_2nd {    
+        padding: 90px 0px 50px 25px;
+    }
+    
+    .about_1st {
+        padding: 80px 0px 0px 25px;
+    }
 }
 
 @media screen and (max-width: 480px) {
     .about_1st {
         display: none;
+    }
+    .about_2nd {    
+        padding: 60px 0px 50px 15px;
+    }
+    .about_header {
+        margin: 0px 0px 20px 0px;
     }
 }

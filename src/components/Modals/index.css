@@ -1,0 +1,82 @@
+.modal {
+    width: 370px;
+    height: 400px;
+    color: #FCFCFC;
+
+    background: #2B0077;
+
+}
+.continueButton {
+  width: 200px;
+  height: 41px;
+
+  color: #FCFCFC;
+  background: linear-gradient(180deg, #DF24EF 0%, #E13386 100%);
+  border: none;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  margin-top: 3%;
+}
+
+.header {
+  height: 70px;
+}
+
+.headerForm {
+  font-size: 19px;
+  position: relative;
+  font-weight: normal;
+  display: inline;
+  left: -10%;
+  top: -18px;
+}
+
+.headerModal {
+  font-size: 19px;
+  position: relative;
+  font-weight: normal;
+  display: inline;
+  left: -6%;
+}
+
+.message{
+  position: relative;
+  top: 8px;
+  left: -2px;
+}
+
+.mail{
+  position: relative;
+  top: 28px;
+  left: -78px;
+}
+.closeButton {
+  position: relative;
+  margin-top: 4%;
+  left: 42%;
+}
+
+.textModal {
+  font-size: 13px;
+  line-height: 18px;
+  margin: 7% 18% 14% 18%;
+}
+
+.textForm {
+  font-size: 13px;
+  line-height: 18px;
+  margin: 7% 17% 5% 17%;
+}
+.formField {
+  width: 78%;
+  margin-bottom: 26px;
+  line-height: 20px;
+  padding: 10px;
+  color: #757575;
+  font-weight: 300;
+  font-size: 15px;
+}
+
+p {
+  margin: 0;
+}
