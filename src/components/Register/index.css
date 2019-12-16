@@ -1,9 +1,11 @@
-.form {
+.formReg {
   font-size: 15px;
   color: #fff;
   background: url('../../img/regFormBackground.svg');
   max-width: 600px;
+  width: 100%;
   margin: 0 auto;
+  padding-bottom: 60px;
 }
 
 .formFields {

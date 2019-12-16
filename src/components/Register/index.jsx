@@ -1,19 +1,17 @@
 import React from 'react';
 import axios from 'axios';
 import PasswordIcon from '../../img/passwordIcon.svg';
+import close from '../../img/close.svg';
+
 import './index.css';
 
-function RegisterPage() {
+function RegisterPage({closeModalWindow}) {
   const [email, setEmail] = React.useState('');
+  const [repeatPassword, setRepeatPassword] = React.useState('');
   const [password, setPassword] = React.useState('');
 
   const onRegister = async e => {
     e.preventDefault();
-
-    const ans1 = await axios({
-      method: 'get',
-      url: 'https://hard-rock.site:1443/test',
-    });
 
     const data = {
       email,
@@ -25,10 +23,13 @@ function RegisterPage() {
       url: 'https://hard-rock.site:1443/api/user/new',
       data: JSON.stringify(data),
     });
+
+    console.log(ans);
   };
 
   return (
-    <form className="form" onSubmit={e => onRegister(e)}>
+    <form className="formReg" onSubmit={e => onRegister(e)}>
+      <img src={close} alt="X"className='closeButton' onClick={() => closeModalWindow(false)} />
       <h1 className="formTitle">Регистрация</h1>
       <div className="formFields">
         <input
@@ -48,8 +49,8 @@ function RegisterPage() {
         />
         <input
           id="repeatPassword"
-          onChange={() => {}}
-          value={password}
+          onChange={e => setRepeatPassword(e.target.value)}
+          value={repeatPassword}
           className="formField formFieldPassword"
           type="password"
           placeholder="Повторите пароль"

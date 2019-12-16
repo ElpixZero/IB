@@ -1,4 +1,4 @@
-.modal {
+.resetPassword {
     width: 370px;
     height: 400px;
     color: #FCFCFC;
@@ -7,22 +7,26 @@
 
 }
 .continueButton {
-  width: 200px;
+  max-width: 200px;
+  width: 100%;
+  display: block;
   height: 41px;
-
   color: #FCFCFC;
   background: linear-gradient(180deg, #DF24EF 0%, #E13386 100%);
   border: none;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   margin-top: 3%;
+  margin: 0 auto;
 }
 
-.header {
-  height: 70px;
+.ResetPasswordheader {
+  text-align: center;
+  overflow: hidden;
+  padding-bottom: 25px;
 }
 
-.headerForm {
+.resetPasswordheaderForm {
   font-size: 19px;
   position: relative;
   font-weight: normal;
@@ -45,15 +49,26 @@
   left: -2px;
 }
 
+.resetPasswordCloseButton {
+  display: block;
+  padding-top: 10px;
+  margin-left: auto;
+  margin-right: 10px;
+}
+
 .mail{
   position: relative;
   top: 28px;
   left: -78px;
 }
 .closeButton {
-  position: relative;
-  margin-top: 4%;
-  left: 42%;
+  display: block;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: 10px;
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
 }
 
 .textModal {
@@ -62,19 +77,27 @@
   margin: 7% 18% 14% 18%;
 }
 
-.textForm {
+.resetFormtextForm {
   font-size: 13px;
   line-height: 18px;
-  margin: 7% 17% 5% 17%;
+  margin: 0 auto;
+  max-width: 240px;
+  text-align: center;
+  margin-bottom: 30px;
 }
-.formField {
-  width: 78%;
+
+.resetPasswordformField {
+  width: 100%;
+  display: block;
+  max-width: 300px;
   margin-bottom: 26px;
   line-height: 20px;
   padding: 10px;
   color: #757575;
   font-weight: 300;
   font-size: 15px;
+  margin: 0 auto;
+  margin-bottom: 25px;
 }
 
 p {
