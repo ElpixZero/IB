@@ -1,14 +1,9 @@
 import React from 'react';
 import { slide as Menu } from 'react-burger-menu';
 
-class Example extends React.Component {
-  render() {
-
-    let onAuth = (e) => {
-      e.preventDefault();
-      this.props.setOpenModal(true);
-    }
-    const styles = {
+function HamburgerMenu({setOpenLoginWindow}) {
+    const styles = 
+    {
       bmBurgerButton: {
         position: 'fixed',
         width: '25px',
@@ -61,18 +56,16 @@ class Example extends React.Component {
       },
       bmOverlay: {
         background: 'rgba(0, 0, 0, 0.3)',
-      },
+      }
     };
-    
     return (
       <Menu styles={styles} width="100%" right>
         <a href="/decions">Решения</a>
         <a href="/support">Поддержка</a>
         <a href="/partners">Партнеры</a>
-        <a onClick={(e) => onAuth(e)}>Личный кабинет</a>
+        <a onClick={() => setOpenLoginWindow(true)}>Личный кабинет</a>
       </Menu>
     );
   }
-}
 
-export default Example;
+export default HamburgerMenu;
