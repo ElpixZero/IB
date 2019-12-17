@@ -1,7 +1,17 @@
 import React from 'react';
 import axios from 'axios';
+import { Button, Header, Image, Modal } from 'semantic-ui-react';
+
 import RegisterForm from '../Register';
 import './index.css';
+
+const ModalModalExample = ({isOpenModal}) => (
+  <Modal open={isOpenModal}>
+    <Modal.Content image>
+      <LoginPage />
+    </Modal.Content>
+  </Modal>
+);
 
 function LoginPage() {
   const [goToRegister, setGoToRegister] = React.useState(false);
@@ -70,4 +80,4 @@ function LoginPage() {
   return <>{renderedComponent}</>;
 }
 
-export default LoginPage;
+export default ModalModalExample;

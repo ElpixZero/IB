@@ -1,4 +1,6 @@
 import React from 'react';
+import Header from '../Header';
+import Footer from '../Footer';
 import './index.css';
 import icon from '../../img/about_icon.png'; // иконка мелкая
 import folder from '../../img/Policy_2.png';
@@ -6,7 +8,9 @@ import machine from '../../img/Policy_1.png';
 
 function Policy() {
   return (
-    <div className="mai">
+    <>
+      <Header />
+      <div className="mai">
       <div className="about_1s">
         <img src={icon} />
       </div>
@@ -246,6 +250,8 @@ function Policy() {
         <img className="image machine" src={machine} />
       </div>
     </div>
+      <Footer />
+    </>
   );
 }
 

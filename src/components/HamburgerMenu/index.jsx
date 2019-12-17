@@ -3,6 +3,11 @@ import { slide as Menu } from 'react-burger-menu';
 
 class Example extends React.Component {
   render() {
+
+    let onAuth = (e) => {
+      e.preventDefault();
+      this.props.setOpenModal(true);
+    }
     const styles = {
       bmBurgerButton: {
         position: 'fixed',
@@ -58,13 +63,13 @@ class Example extends React.Component {
         background: 'rgba(0, 0, 0, 0.3)',
       },
     };
-    // NOTE: You also need to provide styles, see https://github.com/negomi/react-burger-menu#styling
+    
     return (
       <Menu styles={styles} width="100%" right>
         <a href="/decions">Решения</a>
         <a href="/support">Поддержка</a>
         <a href="/partners">Партнеры</a>
-        <a href="/auth">Личный кабинет</a>
+        <a onClick={(e) => onAuth(e)}>Личный кабинет</a>
       </Menu>
     );
   }
