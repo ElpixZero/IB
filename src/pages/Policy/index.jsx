@@ -2,14 +2,13 @@ import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import './index.css';
-import icon from '../../img/about_icon.png'; // иконка мелкая
+import icon from '../../img/about_icon.png';
 import folder from '../../img/Policy_2.png';
 import machine from '../../img/Policy_1.png';
 
 function Policy() {
   return (
     <>
-      <Header  />
       <div className="mai">
       <div className="about_1s">
         <img src={icon} />
@@ -249,8 +248,7 @@ function Policy() {
         <img className="image folder" src={folder} />
         <img className="image machine" src={machine} />
       </div>
-    </div>
-      <Footer />
+      </div>
     </>
   );
 }

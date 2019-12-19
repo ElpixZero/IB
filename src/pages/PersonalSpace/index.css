@@ -1,0 +1,67 @@
+.lkContainer {
+  width: 100%;
+}
+
+.lkSidebar {
+  font-weight: 700;
+  max-width: 427px;
+  width: 100%;
+  background: #F5F5F5;
+  border-radius: 20px;
+  padding-left: 25px;
+  height: 900px;
+}
+
+.lkSidebarTitle {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 75px;
+}
+
+.lkSidebarTitleText {
+  margin-left: 20px;
+  font-size: 30px;
+  color: #E13190;
+}
+
+.lkSidebarContentElem {
+  font-size: 20px;
+  color: #E13190;
+  padding: 40px 0;
+  background: #FFFFFF;
+  border-radius: 20px 0px 0px 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  margin-bottom: 25px;
+}
+
+.lkMainScreen {
+  width: 100%;
+  height: 900px;
+  padding: 0 65px;
+}
+
+.lkSidebarContentElemText {
+  margin-left: 15px;
+}
+
+.lkMainScreenTitle {
+  font-size: 30px;
+  color: #000000;
+  margin-bottom: 50px;
+  font-weight: 400;
+  margin-top: 50px;
+}
+
+.lkMainScreenSlider {
+  height: 350px;
+  border: 1px solid black;
+  margin-bottom: 60px;
+}
+
+.lkMainScreenNotifs {
+  height: 350px;
+  border: 1px solid black
+}

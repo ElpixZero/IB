@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import PasswordIcon from '../../img/passwordIcon.svg';
 import close from '../../img/close.svg';
 
@@ -62,7 +61,7 @@ function RegisterPage({closeModalWindow}) {
             <label className="ff"></label>
         </div>
         <div className="checkboxLabel">
-          <label for='regCheck' className="checkboxLabelText">Я подтверждаю, что полностью прочитал, понимаю и принимаю все условия <Link to="/policy" className="checkboxLabelSpecial">Политики конфиденциальности</Link>, описывающей обработку данных</label>
+          <label for='regCheck' className="checkboxLabelText">Я подтверждаю, что полностью прочитал, понимаю и принимаю все условия <a href="/policy" className="checkboxLabelSpecial">Политики конфиденциальности</a>, описывающей обработку данных</label>
         </div>
        </div>
        
