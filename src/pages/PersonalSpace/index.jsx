@@ -3,6 +3,7 @@ import PersonalSpaceLoginIcon from '../../img/PersonalSpaceLoginIcon.svg';
 import personalSpaceSidebarMainIcon from '../../img/personalSpaceSidebarMainIcon.svg';
 import PersonalSpaceProfileIcon from '../../img/PersonalSpaceProfileIcon.svg';
 import PersonalSpaceOfficialIcon from '../../img/PersonalSpaceOfficialIcon.svg';
+import Slider from '../../components/Slider';
 import './index.css';
 
 const styles = {
@@ -39,7 +40,9 @@ function Main() {
       </div>
       <div className="lkMainScreen">
         <h3 className="lkMainScreenTitle">Уведомления и активность</h3>
-        <div className="lkMainScreenSlider">слайдер</div>
+        <div className="lkMainScreenSlider">
+          <Slider />
+        </div>
         <div className="lkMainScreenNotifs">нотификации</div>
       </div>
     </div>
