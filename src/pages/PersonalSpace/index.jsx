@@ -3,7 +3,9 @@ import PersonalSpaceLoginIcon from '../../img/PersonalSpaceLoginIcon.svg';
 import personalSpaceSidebarMainIcon from '../../img/personalSpaceSidebarMainIcon.svg';
 import PersonalSpaceProfileIcon from '../../img/PersonalSpaceProfileIcon.svg';
 import PersonalSpaceOfficialIcon from '../../img/PersonalSpaceOfficialIcon.svg';
-import Slider from '../../components/Slider';
+import PsMainPage from '../../components/PsMainPage';
+import PsProfilePage from '../../components/PsProfilePage';
+import PsLicensePage from '../../components/PsLicensePage';
 import './index.css';
 
 const styles = {
@@ -14,6 +16,13 @@ const styles = {
 };
 
 function Main() {
+  const [mainBarPage, setMainBarPage] = React.useState(0);
+  const mainBarPages = {
+    0: <PsMainPage />,
+    1: <PsProfilePage />,
+    2: <PsLicensePage />,
+  };
+
   return (
     <div className="lkContainer" style={styles}>
       <div className="lkSidebar">
@@ -23,15 +32,15 @@ function Main() {
         </div>
         <div className="lkSidebarContent">
           <ul>
-            <li className="lkSidebarContentElem">
+            <li className={`lkSidebarContentElem${mainBarPage === 0 ? ' lkSidebarContentElemActive' : ''}`} onClick={() => setMainBarPage(0)}>
               <img src={personalSpaceSidebarMainIcon} />
               <span className="lkSidebarContentElemText">Главная</span>
             </li>
-            <li className="lkSidebarContentElem">
+            <li className={`lkSidebarContentElem${mainBarPage === 1 ? ' lkSidebarContentElemActive' : ''}`}  onClick={() => setMainBarPage(1)}>
               <img src={PersonalSpaceProfileIcon} />
               <span className="lkSidebarContentElemText">Профиль</span>
             </li>
-            <li className="lkSidebarContentElem">
+            <li className={`lkSidebarContentElem${mainBarPage === 2 ? ' lkSidebarContentElemActive' : ''}`}  onClick={() => setMainBarPage(2)}>
               <img src={PersonalSpaceOfficialIcon} />
               <span className="lkSidebarContentElemText">Лицензии</span>
             </li>
@@ -39,11 +48,7 @@ function Main() {
         </div>
       </div>
       <div className="lkMainScreen">
-        <h3 className="lkMainScreenTitle">Уведомления и активность</h3>
-        <div className="lkMainScreenSlider">
-          <Slider />
-        </div>
-        <div className="lkMainScreenNotifs">нотификации</div>
+        {mainBarPages[mainBarPage]}
       </div>
     </div>
   );

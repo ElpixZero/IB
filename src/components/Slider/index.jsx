@@ -2,25 +2,23 @@ import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import MobileStepper from '@material-ui/core/MobileStepper';
 import PersonalSpaceSliderIcon1 from '../../img/PersonalSpaceSliderIcon1.svg';
+import PersonalSpaceSliderIcon2 from '../../img/PersonalSpaceSliderIcon2.svg';
+import PersonalSpaceSliderIcon3 from '../../img/PersonalSpaceSliderIcon3.svg';
+import PersonalSpaceSliderIcon4 from '../../img/PersonalSpaceSliderIcon4.svg';
 import Button from '@material-ui/core/Button';
 
 const tutorialSteps = [
   {
     label: 'San Francisco – Oakland Bay Bridge, United States',
     imgPath: PersonalSpaceSliderIcon1,
-    imgPath2:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
-      imgPath3:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80',
+    imgPath2: PersonalSpaceSliderIcon2,
+    imgPath3: PersonalSpaceSliderIcon3,
     },
   {
     label: 'Bird',
-    imgPath:
-      'https://images.unsplash.com/photo-1538032746644-0212e812a9e7?auto=format&fit=crop&w=400&h=250&q=60',
-      imgPath2:
-      'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=400&h=250&q=80',
-      imgPath3:
-      'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
+    imgPath: PersonalSpaceSliderIcon2,
+    imgPath2: PersonalSpaceSliderIcon3,
+    imgPath3: PersonalSpaceSliderIcon4,
     },
 ];
 
@@ -28,6 +26,11 @@ const useStyles = makeStyles(theme => ({
   root: {
     maxWidth: '100%',
     flexGrow: 1,
+    marginBottom: 30,
+  },
+
+  progress: {
+    width: '100%',
   },
   header: {
     display: 'flex',
@@ -48,6 +51,7 @@ const useStyles = makeStyles(theme => ({
   },
   cont: {
     display: 'flex',
+    marginBottom: 15,
   },
   sliderCard: {
     height: 325,
@@ -87,53 +91,101 @@ export default function TextMobileStepper() {
   };
 
   return (
-    <div className={classes.root}>
-      <div className={classes.cont}>
-        <div className={classes.sliderCard}>
-          <img
-            className={classes.img}
-            src={tutorialSteps[activeStep].imgPath}
-            alt={tutorialSteps[activeStep].label}
-          />
-          <span className={classes.sliderTitle}>Расскажите о себе</span>
-          <p className={classes.sliderDesc}>Заполните профиль дополнительной информацией, необходимой для дальнейшего сотрудничества</p>
+    <>
+      <div className={classes.root}>
+        <div className={classes.cont}>
+          <div className={classes.sliderCard}>
+            <img
+              className={classes.img}
+              src={tutorialSteps[activeStep].imgPath}
+              alt={tutorialSteps[activeStep].label}
+            />
+            <span className={classes.sliderTitle}>Оставьте отзыв</span>
+            <p className={classes.sliderDesc}>Делитесь мнением, ставьте оценки, нам важно знать ваше мнение</p>
+          </div>
+          <div className={classes.sliderCard}>
+            <img
+              className={classes.img}
+              src={tutorialSteps[activeStep].imgPath2}
+              alt={tutorialSteps[activeStep].label}
+            />
+            <span className={classes.sliderTitle}>Следите за новостями</span>
+            <p className={classes.sliderDesc}>Узнайте о выходе наших продуктов, а также о передовых исследованиях в области информационной безопасности </p>
+          </div>
+          <div className={classes.sliderCard}>
+            <img
+              className={classes.img}
+              src={tutorialSteps[activeStep].imgPath3}
+              alt={tutorialSteps[activeStep].label}
+            />
+            <span className={classes.sliderTitle}>Консультация</span>
+            <p className={classes.sliderDesc}>Мы готовы подобрать для вас наиболее оптимальное решение, исходя из ваших интересов</p>
+          </div>
         </div>
-        <div className={classes.sliderCard}>
-          <img
-            className={classes.img}
-            src={tutorialSteps[activeStep].imgPath}
-            alt={tutorialSteps[activeStep].label}
-          />
-          <span className={classes.sliderTitle}>Расскажите о себе</span>
-          <p className={classes.sliderDesc}>Заполните профиль дополнительной информацией, необходимой для дальнейшего сотрудничества</p>
-        </div>
-        <div className={classes.sliderCard}>
-          <img
-            className={classes.img}
-            src={tutorialSteps[activeStep].imgPath}
-            alt={tutorialSteps[activeStep].label}
-          />
-          <span className={classes.sliderTitle}>Расскажите о себе</span>
-          <p className={classes.sliderDesc}>Заполните профиль дополнительной информацией, необходимой для дальнейшего сотрудничества</p>
-        </div>
-      </div>
-      
-      <MobileStepper
-        steps={maxSteps}
-        position="static"
-        variant="text"
-        activeStep={activeStep}
-        nextButton={
-          <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
-            Next
-          </Button>
-        }
-        backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-            Back
-          </Button>
-        }
-      />
+        
+        <MobileStepper
+          steps={maxSteps}
+          variant="text"
+          activeStep={activeStep}
+        />
     </div>
+      {ProgressMobileStepper(handleNext, handleBack)}
+    </>
+  );
+}
+
+function ProgressMobileStepper(handleNext, handleBack) {
+  const useStyles = makeStyles(theme => ({
+    root: {
+      height: 11,
+      marginBottom: 50,
+    },
+    progress: {
+      width: '100%',
+    },
+  }));
+
+  const LinearProgress = makeStyles(() => ({
+    root: {
+      height: 11,
+    },
+    colorPrimary: {
+      backgroundColor: '#9E9E9E',
+    },
+  }));
+
+  const theme = useTheme();
+  const classes = useStyles();
+  const [activeStep, setActiveStep] = React.useState(2);
+
+  const handleNextProgress = () => {
+    handleNext();
+    setActiveStep(prevActiveStep => 3);
+  };
+
+  const handleBackProgress = () => {
+    handleBack();
+    setActiveStep(prevActiveStep => 2);
+  };
+
+  return (
+    <MobileStepper
+      variant="progress"
+      steps={4}
+      LinearProgressProps = {LinearProgress}
+      position="static"
+      activeStep={activeStep}
+      className={classes.root}
+      nextButton={
+        <Button size="small" onClick={handleNextProgress} disabled={activeStep === 3}>
+          Next
+        </Button>
+      }
+      backButton={
+        <Button size="small" onClick={handleBackProgress} disabled={activeStep === 2}>
+          Back
+        </Button>
+      }
+    />
   );
 }

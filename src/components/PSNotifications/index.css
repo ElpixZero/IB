@@ -1,0 +1,43 @@
+.psContainer {
+    color: #000000;
+}
+
+.psTitle {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.psTitleNtfCount {
+    color: #E13190;
+}
+
+.psNotifications {
+    background: #F5F5F5;
+    border: 1px solid #F5F5F5;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+.psNtfBlock {
+    margin-bottom: 45px;
+}
+
+.psMessagesBlock {
+    margin-bottom: 15px;
+}
+ 
+.psNotificationsIcon {
+    margin-left: 25px;
+}
+
+.psNotificationsMessage {
+    margin-left: 25px;
+    font-weight: 700;
+    color: #686464;
+}
+
+.psNotifications {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+}
