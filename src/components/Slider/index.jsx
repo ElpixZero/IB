@@ -5,7 +5,42 @@ import PersonalSpaceSliderIcon1 from '../../img/PersonalSpaceSliderIcon1.svg';
 import PersonalSpaceSliderIcon2 from '../../img/PersonalSpaceSliderIcon2.svg';
 import PersonalSpaceSliderIcon3 from '../../img/PersonalSpaceSliderIcon3.svg';
 import PersonalSpaceSliderIcon4 from '../../img/PersonalSpaceSliderIcon4.svg';
-import Button from '@material-ui/core/Button';
+import SwipeableViews from 'react-swipeable-views';
+
+function ProgressMobileStepper(activeProgressStep) {
+  const useStyles = makeStyles(theme => ({
+    root: {
+      height: 11,
+      marginBottom: 50,
+    },
+    progress: {
+      width: '100%',
+    },
+  }));
+
+  const LinearProgress = makeStyles(() => ({
+    root: {
+      height: 11,
+    },
+    colorPrimary: {
+      backgroundColor: '#9E9E9E',
+    },
+  }));
+
+  const theme = useTheme();
+  const classes = useStyles();
+
+  return (
+    <MobileStepper
+      variant="progress"
+      steps={4}
+      LinearProgressProps = {LinearProgress()}
+      position="static"
+      activeStep={activeProgressStep}
+      className={classes.progress}
+    />
+  );
+}
 
 const tutorialSteps = [
   {
@@ -76,116 +111,72 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function TextMobileStepper() {
+function SwipeableTextMobileStepper() {
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
+  const [activeProgressStep, setActiveProgressStep] = React.useState(2);
   const maxSteps = tutorialSteps.length;
-
-  const handleNext = () => {
-    setActiveStep(prevActiveStep => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep(prevActiveStep => prevActiveStep - 1);
-  };
 
   return (
     <>
       <div className={classes.root}>
-        <div className={classes.cont}>
-          <div className={classes.sliderCard}>
-            <img
-              className={classes.img}
-              src={tutorialSteps[activeStep].imgPath}
-              alt={tutorialSteps[activeStep].label}
-            />
-            <span className={classes.sliderTitle}>Оставьте отзыв</span>
-            <p className={classes.sliderDesc}>Делитесь мнением, ставьте оценки, нам важно знать ваше мнение</p>
-          </div>
-          <div className={classes.sliderCard}>
-            <img
-              className={classes.img}
-              src={tutorialSteps[activeStep].imgPath2}
-              alt={tutorialSteps[activeStep].label}
-            />
-            <span className={classes.sliderTitle}>Следите за новостями</span>
-            <p className={classes.sliderDesc}>Узнайте о выходе наших продуктов, а также о передовых исследованиях в области информационной безопасности </p>
-          </div>
-          <div className={classes.sliderCard}>
-            <img
-              className={classes.img}
-              src={tutorialSteps[activeStep].imgPath3}
-              alt={tutorialSteps[activeStep].label}
-            />
-            <span className={classes.sliderTitle}>Консультация</span>
-            <p className={classes.sliderDesc}>Мы готовы подобрать для вас наиболее оптимальное решение, исходя из ваших интересов</p>
-          </div>
-        </div>
-        
+        <SwipeableViews
+          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+          index={activeStep}
+          enableMouseEvents
+          onChangeIndex={(current, last) => {
+            if (current > last) {
+              setActiveProgressStep(3);
+            } else {
+              setActiveProgressStep(2);
+            }
+          }}
+        >
+          {tutorialSteps.map(step => (
+            <div key={step.label}>
+              <div className={classes.cont}>
+
+                <div className={classes.sliderCard}>
+                    <img
+                      className={classes.img}
+                      src={tutorialSteps[activeStep].imgPath}
+                      alt={tutorialSteps[activeStep].label}
+                    />
+                    <span className={classes.sliderTitle}>Оставьте отзыв</span>
+                    <p className={classes.sliderDesc}>Делитесь мнением, ставьте оценки, нам важно знать ваше мнение</p>
+                </div>
+                <div className={classes.sliderCard}>
+                  <img
+                    className={classes.img}
+                    src={tutorialSteps[activeStep].imgPath2}
+                    alt={tutorialSteps[activeStep].label}
+                  />
+                  <span className={classes.sliderTitle}>Следите за новостями</span>
+                  <p className={classes.sliderDesc}>Узнайте о выходе наших продуктов, а также о передовых исследованиях в области информационной безопасности </p>
+                </div>
+                <div className={classes.sliderCard}>
+                  <img
+                    className={classes.img}
+                    src={tutorialSteps[activeStep].imgPath3}
+                    alt={tutorialSteps[activeStep].label}
+                  />
+                  <span className={classes.sliderTitle}>Консультация</span>
+                  <p className={classes.sliderDesc}>Мы готовы подобрать для вас наиболее оптимальное решение, исходя из ваших интересов</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </SwipeableViews>
         <MobileStepper
           steps={maxSteps}
           variant="text"
           activeStep={activeStep}
         />
-    </div>
-      {ProgressMobileStepper(handleNext, handleBack)}
+      </div>
+      {ProgressMobileStepper(activeProgressStep)}
     </>
   );
 }
 
-function ProgressMobileStepper(handleNext, handleBack) {
-  const useStyles = makeStyles(theme => ({
-    root: {
-      height: 11,
-      marginBottom: 50,
-    },
-    progress: {
-      width: '100%',
-    },
-  }));
-
-  const LinearProgress = makeStyles(() => ({
-    root: {
-      height: 11,
-    },
-    colorPrimary: {
-      backgroundColor: '#9E9E9E',
-    },
-  }));
-
-  const theme = useTheme();
-  const classes = useStyles();
-  const [activeStep, setActiveStep] = React.useState(2);
-
-  const handleNextProgress = () => {
-    handleNext();
-    setActiveStep(prevActiveStep => 3);
-  };
-
-  const handleBackProgress = () => {
-    handleBack();
-    setActiveStep(prevActiveStep => 2);
-  };
-
-  return (
-    <MobileStepper
-      variant="progress"
-      steps={4}
-      LinearProgressProps = {LinearProgress}
-      position="static"
-      activeStep={activeStep}
-      className={classes.root}
-      nextButton={
-        <Button size="small" onClick={handleNextProgress} disabled={activeStep === 3}>
-          Next
-        </Button>
-      }
-      backButton={
-        <Button size="small" onClick={handleBackProgress} disabled={activeStep === 2}>
-          Back
-        </Button>
-      }
-    />
-  );
-}
+export default SwipeableTextMobileStepper;
