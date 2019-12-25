@@ -11,8 +11,12 @@
     "react-burger-menu": "^2.6.13",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
+<<<<<<< HEAD
     "react-scripts": "^3.3.0",
     "react-swipeable-views": "^0.13.3"
+=======
+    "react-scripts": "^3.3.0"
+>>>>>>> d23a2f88b0055166bca4df82c7a366bb03168497
   },
   "scripts": {
     "dev": "react-scripts start",
