@@ -5,13 +5,17 @@
   max-width: 600px;
   width: 100%;
   margin: 0 auto;
-  padding-bottom: 60px;
 }
 
 .formFields {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.errorActive {
+  border: 1px solid red;
+  color: red;
 }
 
 .formField {
@@ -22,6 +26,14 @@
   padding: 10px;
   color: #757575;
   font-weight: 300;
+}
+
+.regErrorMessage {
+  margin-bottom: 35px;
+  color: red;
+  text-align: center;
+  max-width: 300px;
+  min-height: 30px;
 }
 
 .formTitle {
@@ -86,7 +98,7 @@ input:disabled + label:before {
 .regFormCheckbox {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 65px;
+  margin-bottom: 35px;
 }
 
 .checkboxLabel {

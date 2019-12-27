@@ -1,0 +1,69 @@
+.lpTitle {
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.lpAddLicenseTitle {
+  margin-top: 50px;
+  margin-bottom: 82px;
+}
+
+.lpList {
+
+}
+
+.lpAddLicenseBlock {
+  margin-bottom: 80px;
+}
+
+.lpAddLicenseBlockContent {
+  display: flex;
+  margin-bottom: 90px;
+}
+.addLicense {
+  background: #F5F5F5;
+  border-radius: 10px;
+  padding: 24px;
+}
+
+.licenseView {
+  background: #2B0077;
+  border-radius: 10px;
+  padding: 24px;
+  color: #fff;
+}
+
+.lpLicenseView {
+  margin-right: 70px;
+  max-width: 324px;
+}
+
+.lpActiveLicenseIcon {
+  background: #2B0077;
+  border-radius: 20px;
+  padding: 40px 25px;
+  color: #fff;
+  margin-right: 80px;
+  max-width: 150px;
+  text-align: center;
+  line-height: 156%;
+}
+
+.lpActiveLicenseTitle {
+  margin-bottom: 60px;
+}
+
+.lpActiveLicenseCardTitle {
+  font-size: 30px;
+  color: #E13190;
+  margin-bottom: 20px;
+}
+
+.lpActiveLicenseKey {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.lpActiveLicenseDate {
+  font-size: 18px;
+}

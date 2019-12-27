@@ -1,16 +1,17 @@
 .lkContainer {
   width: 100%;
   font-size: 14px;
+  margin-top: 100px;
 }
 
 .lkSidebar {
   font-weight: 700;
   max-width: 427px;
   width: 100%;
-  background: #F5F5F5;
+  background: #f5f5f5;
   border-radius: 20px;
   padding-left: 25px;
-  height: 900px;
+  max-height: 630px;
 }
 
 .lkSidebarTitle {
@@ -23,12 +24,22 @@
 .lkSidebarTitleText {
   margin-left: 20px;
   font-size: 30px;
-  color: #E13190;
+  color: #e13190;
+}
+
+.lkSiderbarTitleIcon {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.lkSidebarContent {
+  padding-bottom: 50px;
 }
 
 .lkSidebarContentElem {
   font-size: 20px;
-  color: #E13190;
+  color: #e13190;
   padding: 40px 0;
   border-radius: 20px 0px 0px 20px;
   display: flex;
@@ -39,7 +50,7 @@
 }
 
 .lkSidebarContentElemActive {
-  background: #FFFFFF;
+  background: #ffffff;
 }
 
 .lkMainScreen {
@@ -57,8 +68,4 @@
   margin-bottom: 50px;
   font-weight: 400;
   margin-top: 50px;
-}
-
-.lkMainScreenSlider {
-
 }

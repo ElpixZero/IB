@@ -7,7 +7,7 @@ import close from '../../img/close.svg';
 import './index.css';
 
 function LoginPage({setForgetPassword, closeModalWindow}) {
-  const [goToRegister, setGoToRegister] = React.useState(false);
+  const [currentForm, setCurrentForm] = React.useState('login');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [errorMessage, setErrorMessage] = React.useState(' ');
@@ -27,6 +27,8 @@ function LoginPage({setForgetPassword, closeModalWindow}) {
         data: JSON.stringify(data),
       });
 
+      console.log(ans);
+
       if (ans.status === 200) {
         window.location.href = '/im';
       }
@@ -36,10 +38,14 @@ function LoginPage({setForgetPassword, closeModalWindow}) {
         } 
 
         if (response.status === 403) {
-          setErrorMessage('Неправильный логин и пароль');
-        } else {
-          setErrorMessage('Что-то пошло не так, попробуйте, пожалуйста, позже');
-        }
+          return setErrorMessage('Неправильный логин и пароль');
+        } 
+
+        if (response.status === 405) {
+          return setErrorMessage('На Вашу почту было выслано письмо. Подтвердите его, пожалуйста.');
+        } 
+
+        return setErrorMessage('Что-то пошло не так, попробуйте, пожалуйста, позже');
       }
     
   };
@@ -83,7 +89,7 @@ function LoginPage({setForgetPassword, closeModalWindow}) {
       <div className="goToRegister">
         <p className="isRegisteredMessage">Не зарегистрированы?</p>
         <button
-          onClick={() => setGoToRegister(true)}
+          onClick={() => setCurrentForm('register')}
           className="goToRegisterButton"
         >
           Создать учетную запись
@@ -92,7 +98,7 @@ function LoginPage({setForgetPassword, closeModalWindow}) {
     </form>
   );
 
-  const renderedComponent = goToRegister ? <RegisterForm closeModalWindow={closeModalWindow} /> : loginComponent;
+  const renderedComponent = currentForm === 'register' ? <RegisterForm setCurrentForm={setCurrentForm} closeModalWindow={closeModalWindow} /> : loginComponent;
   return <>{renderedComponent}</>;
 }
 

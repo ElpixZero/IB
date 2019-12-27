@@ -10,9 +10,9 @@ import './index.css';
 
 const styles = {
   maxWidth: '1600px',
-  margin: '0 auto',
   display: 'flex',
   flexDirection: 'row',
+  marginBottom: 100,
 };
 
 function Main() {
@@ -27,7 +27,9 @@ function Main() {
     <div className="lkContainer" style={styles}>
       <div className="lkSidebar">
         <div className="lkSidebarTitle">
-          <img src={PersonalSpaceLoginIcon} />
+          <div className="lkSiderbarTitleIcon">
+            <img src={PersonalSpaceLoginIcon} />
+          </div>
           <span className="lkSidebarTitleText">Логин</span>
         </div>
         <div className="lkSidebarContent">

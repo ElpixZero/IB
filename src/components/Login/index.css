@@ -22,7 +22,6 @@
   margin: 0 auto;
   max-width: 320px;
   padding: 0 10px;
-  margin-bottom: 35px;
 }
 
 .formField {
@@ -50,6 +49,7 @@
   line-height: 33px;
   font-weight: 300;
   letter-spacing: 1px;
+  margin-bottom: 15px;
 }
 
 .formButton {
