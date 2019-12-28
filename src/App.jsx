@@ -6,6 +6,7 @@ import PersonalSpace from './pages/PersonalSpace';
 import Header from './components/Header/index.jsx';
 import Policy from './pages/Policy';
 import AuthModalWindow from './components/AuthModalWindow';
+import Partners from './components/Partners';
 import Footer from './components/Footer';
 
 import './style.css';
@@ -28,6 +29,7 @@ function App() {
           <Route exact path="/" component={Main} className="pageContainer" />
           <Route exact path="/im" component={PersonalSpace} className="pageContainer" />
           <Route exact path="/policy" component={Policy} className="pageContainer" />
+          <Route exact path="/partners" component={Partners} className="pageContainer" />
         </Switch>
       </BrowserRouter>
       
