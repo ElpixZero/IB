@@ -18,6 +18,11 @@
   color: red;
 }
 
+.succeedMsg {
+  color: green!important;
+  font-weight: 600;
+}
+
 .formField {
   width: 100%;
   max-width: 320px;

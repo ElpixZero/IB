@@ -16,6 +16,11 @@
   margin-bottom: 80px;
 }
 
+.lpNoneLicension {
+  font-size: 20px;
+  line-height: 156%;
+}
+
 .lpAddLicenseBlockContent {
   display: flex;
   margin-bottom: 90px;

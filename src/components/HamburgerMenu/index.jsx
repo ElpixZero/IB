@@ -5,11 +5,11 @@ function HamburgerMenu({setOpenLoginWindow}) {
     const styles = 
     {
       bmBurgerButton: {
-        position: 'fixed',
+        position: 'absolute',
         width: '25px',
         height: '25px',
-        right: '30px',
-        top: '27.5px',
+        right: '25px',
+        top: '10.5px',
       },
       bmBurgerBars: {
         background: 'white',

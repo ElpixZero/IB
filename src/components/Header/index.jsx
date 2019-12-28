@@ -10,7 +10,7 @@ function Header({setOpenLoginWindow}) {
       <div className="headerContainer">
       <header className="header">
         <div className="leftHeader">
-          <a href="/">IB</a>
+          <a href="/">INFO.gen</a>
         </div>
         <div className="centerHeader">
           <a href="/decions">Решения</a>

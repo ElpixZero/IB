@@ -10,47 +10,57 @@ import SwipeableViews from 'react-swipeable-views';
 function ProgressMobileStepper(activeProgressStep) {
   const useStyles = makeStyles(theme => ({
     root: {
-      height: 11,
       marginBottom: 50,
     },
     progress: {
       width: '100%',
+      height: 10,
+      borderRadius: 10,
     },
-  }));
-
-  const LinearProgress = makeStyles(() => ({
-    root: {
-      height: 11,
+    bar: {
+      backgroundColor: '#EFEFEF',
     },
     colorPrimary: {
       backgroundColor: '#9E9E9E',
     },
   }));
 
-  const theme = useTheme();
   const classes = useStyles();
 
   return (
-    <MobileStepper
-      variant="progress"
-      steps={4}
-      LinearProgressProps = {LinearProgress()}
-      position="static"
-      activeStep={activeProgressStep}
-      className={classes.progress}
-    />
+    <div className={classes.root}>
+       <MobileStepper
+        variant="progress"
+        steps={4}
+        position="static"
+        activeStep={activeProgressStep}
+        classes={classes}
+      />
+    </div>
   );
 }
 
 const tutorialSteps = [
   {
     label: 'San Francisco – Oakland Bay Bridge, United States',
+    title: 'Расскажите о себе',
+    title2: 'Оставьте отзыв',
+    title3: 'Следите за новостями',
+    text: 'Заполните профиль дополнительной информацией, необходимой для дальнейшего сотрудничества',
+    text2: 'Делитесь мнением, ставьте оценки, нам важно знать ваше мнение',
+    text3: 'Узнайте о выходе наших продуктов, а также о передовых исследованиях в области информационной безопасности ',
     imgPath: PersonalSpaceSliderIcon1,
     imgPath2: PersonalSpaceSliderIcon2,
     imgPath3: PersonalSpaceSliderIcon3,
     },
   {
     label: 'Bird',
+    title: 'Оставьте отзыв',
+    title2: 'Следите за новостями',
+    title3: 'Консультация',
+    text: 'Делитесь мнением, ставьте оценки, нам важно знать ваше мнение',
+    text2: 'Узнайте о выходе наших продуктов, а также о передовых исследованиях в области информационной безопасности ',
+    text3: 'Мы готовы подобрать для вас наиболее оптимальное решение, исходя из ваших интересов',
     imgPath: PersonalSpaceSliderIcon2,
     imgPath2: PersonalSpaceSliderIcon3,
     imgPath3: PersonalSpaceSliderIcon4,
@@ -86,10 +96,11 @@ const useStyles = makeStyles(theme => ({
   },
   cont: {
     display: 'flex',
+    justifyContent: 'center',
     marginBottom: 15,
   },
   sliderCard: {
-    height: 325,
+    padding: 20,
     maxWidth: 303,
     width: '100%',
     backgroundColor: '#2B0077',
@@ -128,23 +139,24 @@ function SwipeableTextMobileStepper() {
           onChangeIndex={(current, last) => {
             if (current > last) {
               setActiveProgressStep(3);
+              setActiveStep(1);
             } else {
               setActiveProgressStep(2);
+              setActiveStep(0);
             }
           }}
         >
           {tutorialSteps.map(step => (
             <div key={step.label}>
               <div className={classes.cont}>
-
                 <div className={classes.sliderCard}>
                     <img
                       className={classes.img}
                       src={tutorialSteps[activeStep].imgPath}
                       alt={tutorialSteps[activeStep].label}
                     />
-                    <span className={classes.sliderTitle}>Оставьте отзыв</span>
-                    <p className={classes.sliderDesc}>Делитесь мнением, ставьте оценки, нам важно знать ваше мнение</p>
+                    <span className={classes.sliderTitle}>{tutorialSteps[activeStep].title}</span>
+                    <p className={classes.sliderDesc}>{tutorialSteps[activeStep].text}</p>
                 </div>
                 <div className={classes.sliderCard}>
                   <img
@@ -152,8 +164,8 @@ function SwipeableTextMobileStepper() {
                     src={tutorialSteps[activeStep].imgPath2}
                     alt={tutorialSteps[activeStep].label}
                   />
-                  <span className={classes.sliderTitle}>Следите за новостями</span>
-                  <p className={classes.sliderDesc}>Узнайте о выходе наших продуктов, а также о передовых исследованиях в области информационной безопасности </p>
+                  <span className={classes.sliderTitle}>{tutorialSteps[activeStep].title2}</span>
+                  <p className={classes.sliderDesc}>{tutorialSteps[activeStep].text2}</p>
                 </div>
                 <div className={classes.sliderCard}>
                   <img
@@ -161,8 +173,8 @@ function SwipeableTextMobileStepper() {
                     src={tutorialSteps[activeStep].imgPath3}
                     alt={tutorialSteps[activeStep].label}
                   />
-                  <span className={classes.sliderTitle}>Консультация</span>
-                  <p className={classes.sliderDesc}>Мы готовы подобрать для вас наиболее оптимальное решение, исходя из ваших интересов</p>
+                  <span className={classes.sliderTitle}>{tutorialSteps[activeStep].title3}</span>
+                  <p className={classes.sliderDesc}>{tutorialSteps[activeStep].text3}</p>
                 </div>
               </div>
             </div>

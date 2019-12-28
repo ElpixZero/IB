@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import Cookies from 'universal-cookie';
 
 import RegisterForm from '../Register';
 import close from '../../img/close.svg';
@@ -7,6 +8,7 @@ import close from '../../img/close.svg';
 import './index.css';
 
 function LoginPage({setForgetPassword, closeModalWindow}) {
+  const cookies = new Cookies();
   const [currentForm, setCurrentForm] = React.useState('login');
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
@@ -31,13 +33,16 @@ function LoginPage({setForgetPassword, closeModalWindow}) {
 
       if (ans.status === 200) {
         window.location.href = '/im';
+        cookies.set('isAuth', 'true', { path: '/' });
       }
-    } catch ({response}) {
-        if (!response) {
-          return setErrorMessage('СИДИШЬ ЧЕРЕЗ РЭУ ?! Тут так не принято');
+    } catch (a) {
+      console.log(a);
+      let {response} = a;
+       if (!response) {
+          return setErrorMessage('Ваш провайдер блокирует запросы к нам(((');
         } 
 
-        if (response.status === 403) {
+        if (response.status === 403 || response.status === 500 || response.status === 505) {
           return setErrorMessage('Неправильный логин и пароль');
         } 
 

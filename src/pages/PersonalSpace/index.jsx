@@ -1,4 +1,6 @@
 import React from 'react';
+import Cookies from 'universal-cookie';
+
 import PersonalSpaceLoginIcon from '../../img/PersonalSpaceLoginIcon.svg';
 import personalSpaceSidebarMainIcon from '../../img/personalSpaceSidebarMainIcon.svg';
 import PersonalSpaceProfileIcon from '../../img/PersonalSpaceProfileIcon.svg';
@@ -8,14 +10,9 @@ import PsProfilePage from '../../components/PsProfilePage';
 import PsLicensePage from '../../components/PsLicensePage';
 import './index.css';
 
-const styles = {
-  maxWidth: '1600px',
-  display: 'flex',
-  flexDirection: 'row',
-  marginBottom: 100,
-};
 
 function Main() {
+  const cookies = new Cookies();
   const [mainBarPage, setMainBarPage] = React.useState(0);
   const mainBarPages = {
     0: <PsMainPage />,
@@ -23,8 +20,14 @@ function Main() {
     2: <PsLicensePage />,
   };
 
+  (function checkAuthorized() {
+    if (cookies.get('isAuth') !== 'true') {
+      window.location.href = '/';
+    }
+  })();
+
   return (
-    <div className="lkContainer" style={styles}>
+    <div className="lkContainer">
       <div className="lkSidebar">
         <div className="lkSidebarTitle">
           <div className="lkSiderbarTitleIcon">

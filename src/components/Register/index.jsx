@@ -50,12 +50,13 @@ function RegisterPage({closeModalWindow, setCurrentForm}) {
         url: 'https://hard-rock.site:1443/api/user/new',
         data: JSON.stringify(data),
       });
-      
-      console.log(ans);
 
       if (ans.status === 201) {
-        console.log('e');
-        return setCurrentForm('register');
+        setErrorMessage({
+          title: 1,
+          msg: 'Успешно! Cейчас вы будете перенаправлены на страницу авторизации...',
+        });
+        return setTimeout(() => setCurrentForm('login'), 2000);
       }
     } catch({response}) {
       if (response.status === 405 || response.status === 400 || response.status === 500) {
@@ -109,7 +110,7 @@ function RegisterPage({closeModalWindow, setCurrentForm}) {
           <label for='regCheck' className="checkboxLabelText">Я подтверждаю, что полностью прочитал, понимаю и принимаю все условия <a href="/policy" className="checkboxLabelSpecial">Политики конфиденциальности</a>, описывающей обработку данных</label>
         </div>
        </div>
-       <p className="regErrorMessage">{errorMessage.msg ? errorMessage.msg : ' '}</p>
+       <p className={`regErrorMessage${errorMessage.title === 1 ? ' succeedMsg' : ''}`}>{errorMessage.msg ? errorMessage.msg : ' '}</p>
         
         <input
           type="submit"
